@@ -18,10 +18,10 @@ env = RecordVideo(env, video_folder=f'videos/{run.id}',
 # model = DQN('MultiInputPolicy', env, verbose=1, tensorboard_log="./tb_logs")
 # model = PPO('MultiInputPolicy', env, verbose=1, tensorboard_log="./tb_logs")
 # model = A2C('MultiInputPolicy', env, verbose=1, tensorboard_log="./tb_logs")
-# model = TRPO('MultiInputPolicy', env, verbose=1, tensorboard_log="./tb_logs")
+model = TRPO('MultiInputPolicy', env, verbose=1, tensorboard_log="./tb_logs")
 
 model.learn(
-    total_timesteps=500000,
+    total_timesteps=300000,
     callback=WandbCallback(
         gradient_save_freq=1000,
         model_save_path="./models/",
