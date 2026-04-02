@@ -126,7 +126,7 @@ class FlappyEnv(gym.Env):
         return self.state, reward, done, truncated, {}
     
     def render(self):
-        image = Image.new(mode='RGB', size=(int(399*RENDER_SCALE), int(399*RENDER_SCALE)), color=(255,255,255))
+        image = Image.new(mode='RGB', size=(int(399*RENDER_SCALE), int(399*RENDER_SCALE)), color=(180, 180, 180))
         draw = ImageDraw.Draw(image)
 
         draw.circle(((AGENT_X+199)*RENDER_SCALE, -(self.agent['pos']-199)*RENDER_SCALE), 5*RENDER_SCALE, fill=(0,255,0))
